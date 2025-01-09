@@ -1,0 +1,31 @@
+name: Deploy CloudFormation Stack
+
+on:
+  push:
+    branches:
+      - main  # You can change this to another branch if necessary
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up AWS CLI with GitHub Secrets
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: eu-west-1  # Choose your AWS region
+
+      # Step 3: Deploy CloudFormation stack
+      - name: Deploy CloudFormation Stack
+        run: |
+          aws cloudformation deploy \
+            --template-file infrastructure.yaml \
+            --stack-name brewbuddy \
+            --capabilities CAPABILITY_NAMED_IAM
