@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  BrewBuddyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: brewbuddy-static-website
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref BrewBuddyS3Bucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal: "*"
+            Action: "s3:GetObject"
+            Resource: !Sub "${BrewBuddyS3Bucket.Arn}/*"
+
+Outputs:
+  WebsiteURL:
+    Value: !GetAtt BrewBuddyS3Bucket.WebsiteURL
+    Description: URL of the static website hosted on S3.
