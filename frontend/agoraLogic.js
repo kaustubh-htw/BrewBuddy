@@ -9,7 +9,7 @@ let rtc = {
 let options = {
     appId: "2a1d5df5bdf344718f49d34ed258885d", // Your Agora App ID
     channel: "brew_buddy",                     // Your Agora Channel name
-    token: "007eJxTYHgg4nnTwzm94I/ulsqqr8ZTe36Wsr7dJ1eU8H8nj+zdbzcVGIwSDVNMU9JMk1LSjE1MzA0t0kwsU4xNUlOMTC0sLExTdt6oTm8IZGRoOSHCwsgAgSA+F0NSUWp5fFJpSkolAwMAqj0j7w==", // Your Agora Token
+    token: "007eJxTYOA/oZqZ6dWo+2MLk/TGepH9eU3r9ep9QhwP7CpS+e7Q3aLAYJRomGKakmaalJJmbGJibmiRZmKZYmySmmJkamFhYZpy4kJ9ekMgI0Nz+QYWRgYIBPG5GJKKUsvjk0pTUioZGACkRiEt", // Your Agora Token
     uid: String(Math.floor(Math.random() * 10000)), // Generate a random user ID
 };
 
