@@ -19,19 +19,14 @@ jobs:
         with:
           node-version: '18.12.1'  # Use Node.js version 14, or another version that matches your project
 
-      
-      # Change directory to frontend if necessary
-      - name: Change directory to frontend
-        run: cd frontend  # Use this step if your package.json is inside the 'frontend' folder
-
-
-      # Install dependencies from package.json
+       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: cd frontend && npm install
 
       # Build the project using Webpack
       - name: Build the project
-        run: npm run build  # Ensure you have a build script in your package.json
+        run: cd frontend && npm run build  # Ensure you have a build script in your package.json
+
 
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
