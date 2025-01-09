@@ -1,0 +1,24 @@
+{
+  "name": "brew_buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "agoraLogic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start:dev": "webpack serve --open --config webpack.config.js"
+  },
+  "dependencies": {
+    "agora-rtc-sdk-ng": "latest",
+    "agora-rtm-sdk": "^2.2.0",
+    "mqtt": "^5.10.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
