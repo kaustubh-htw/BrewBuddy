@@ -19,6 +19,12 @@ jobs:
         with:
           node-version: '18.12.1'  # Use Node.js version 14, or another version that matches your project
 
+      
+      # Change directory to frontend if necessary
+      - name: Change directory to frontend
+        run: cd frontend  # Use this step if your package.json is inside the 'frontend' folder
+
+
       # Install dependencies from package.json
       - name: Install dependencies
         run: npm install
