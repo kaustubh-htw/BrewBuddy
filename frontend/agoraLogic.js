@@ -93,12 +93,12 @@ async function startBasicCall() {
         }
 
         // Listen for "user-unpublished" event and remove remote user when they leave
-        rtc.client.on("user-unpublished", (user) => {
-            const remotePlayerContainer = document.getElementById(user.uid);
-            if (remotePlayerContainer) {
-                remotePlayerContainer.remove();
-            }
-        });
+        // rtc.client.on("user-unpublished", (user) => {
+        //     const remotePlayerContainer = document.getElementById(user.uid);
+        //     if (remotePlayerContainer) {
+        //         remotePlayerContainer.remove();
+        //     }
+        // });
     });
 
     try {
