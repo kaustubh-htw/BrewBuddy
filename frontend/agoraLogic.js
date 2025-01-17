@@ -2,7 +2,7 @@
 import mqtt from "mqtt";
 const brokerUrl = "wss://broker.hivemq.com:8884/mqtt";
 const topic = "brewbuddy/motion";
-const landingPageUrl = "http://landingpagebrewbuddy.s3-website-eu-west-1.amazonaws.com"; // Landing page URL
+const landingPageUrl = "https://d37idqtxb9aa5l.cloudfront.net/"; // Landing page URL
 
 const client = mqtt.connect(brokerUrl);
 
